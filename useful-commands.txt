@@ -6,3 +6,10 @@ docker run -d -p 8080:8080 todo-web-service:1.0
 docker login --username=sabbira
 docker tag e1fff5cfdeba sabbira/todo-web-service:1.0.0
 docker push sabbira/todo-web-service:1.0.0
+
+
+#jlib
+#without docker daemon
+./mvnw compile com.google.cloud.tools:jib-maven-plugin:1.6.1:build -Dimage=sabbira/todo-web-service:2.0.0
+#with docker daemon
+./mvnw compile com.google.cloud.tools:jib-maven-plugin:1.6.1:dockerBuild
