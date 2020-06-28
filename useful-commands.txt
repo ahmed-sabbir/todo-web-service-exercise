@@ -1,0 +1,8 @@
+# clean up
+docker system prune -a -f
+
+docker build -t todo-web-service:1.0 .
+docker run -d -p 8080:8080 todo-web-service:1.0
+docker login --username=sabbira
+docker tag e1fff5cfdeba sabbira/todo-web-service:1.0.0
+docker push sabbira/todo-web-service:1.0.0
